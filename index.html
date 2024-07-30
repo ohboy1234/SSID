@@ -9,8 +9,10 @@
     <h1>URL Checker</h1>
     <p id="url"></p>
     <script>
-        // Display the current URL
-        document.getElementById('url').innerText = `URL Requested: ${window.location.href}`;
+        // Display the base URL without the repository path
+        const url = new URL(window.location.href);
+        const baseUrl = `${url.protocol}//${url.hostname}`;
+        document.getElementById('url').innerText = `Base URL: ${baseUrl}`;
     </script>
 </body>
 </html>
